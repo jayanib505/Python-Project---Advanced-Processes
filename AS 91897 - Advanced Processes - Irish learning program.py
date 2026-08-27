@@ -21,26 +21,25 @@ def learn(basic_phrases):
     topic = input("Enter topic to learn: ").title()
 
     if topic == "Basic Phrases":
+        dictionary = basic_phrases
         print("\nLearn Basic Phrases")
 
-        chosen_word = random.choice(basic_phrases)
-        incorrect_option = random.choice(basic_phrases)
-        correct_answer = random.choice(basic_phrases)
-
-        print(chosen_word)
-        print(incorrect_option['Irish'])
-        print(correct_answer)
-
+        answer = random.choice(basic_phrases)
         
-        
-        #answer = input("\nEnter the correct translation: ").strip().title()
-        #if answer == "":
-         #   print("Correct!")
+        print("Select correct meaning: {}".format(answer))
 
-        #else:
-         #   print("Incorrect. The correct answer was {}".format)
+        random.shuffle(basic_phrases)
+        print(basic_phrases)
 
-        
+        selection = input("Enter selection: ")
+        if selection == answer:
+              print("Correct")
+
+        else:
+            print("Incorrect")
+
+
+
 def dictionary(basic_phrases):
     """Prints dictionaries for chosen topic"""
     print("\nWelcome to the Dictionaries")
@@ -52,9 +51,7 @@ def dictionary(basic_phrases):
         print("\nDictionary  - Basic Phrases")
         # For loop prints formatted dictionary
         for basic in basic_phrases:
-            print("English: {:12} | Irish: {:20} |".format
-              (basic['English'], basic['Irish']))
-
+            print(basic)
 
 def profile():
     print("Profile")
@@ -65,13 +62,17 @@ def main():
 
     # List of dictionaries - Topic: Basic Phrases
     basic_phrases = [
-        {"English" : "Hi", "Irish" : "Haigh"},
-        {"English" : "Hello", "Irish" : "Dia Duit"},
-        {"English" : "Bye", "Irish" : "Slán"},
-        {"English" : "Please", "Irish" : "Le do thoil"},
-        {"English" : "Thankyou", "Irish" : "Go raibh maith agat"},
-        {"English" : "Welcome", "Irish" : "Fáilte"},
-        {"English" : "Good Morning", "Irish" : "Maidin mhaith"}
+        {"Hi" : "Haigh"},
+        {"Hello" : "Dia Duit"},
+        {"Bye" : "Slán"},
+        {"Please" : "Le do thoil"},
+        {"Thankyou" : "Go raibh maith agat"},
+        {"Welcome" : "Fáilte"},
+        {"Good Morning" : "Maidin mhaith"},
+        {"With" : "le"},
+        {"And" : "agus"},
+        {"Or" : "no"},
+        {"The" : "an"}
         ]
 
     
