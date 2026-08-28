@@ -18,40 +18,51 @@ print("""\n\nTopics available:
 def learn(basic_phrases):
     print("\nWelcome to Learn")
 
+    # Ask user for topic
     topic = input("Enter topic to learn: ").title()
 
+    # 
     if topic == "Basic Phrases":
         dictionary = basic_phrases
         print("\nLearn Basic Phrases")
 
-        answer = random.choice(basic_phrases)
-        
-        print("Select correct meaning: {}".format(answer))
+        # Select Irish translation 
+        print("Select the correct translation for: Haigh")
 
-        random.shuffle(basic_phrases)
-        print(basic_phrases)
+        # English translation options
+        print("1. Hello")
+        print("2. Hi")
+        print("3. Bye")
 
-        selection = input("Enter selection: ")
-        if selection == answer:
-              print("Correct")
+        # Get user answer selection
+        user_selection = input("Enter number selection: ")
+
+        # Check if selection correct
+        if user_selection == "2":
+            print("""Correct! 
+            Congratulations on learning a new word!""")
 
         else:
-            print("Incorrect")
+            print("Incorrect. Keep going!")
 
+        
 
 
 def dictionary(basic_phrases):
     """Prints dictionaries for chosen topic"""
     print("\nWelcome to the Dictionaries")
 
-    #Ask user for topic
+    # Ask user for topic
     topic = input("Enter dictionary topic: ").title()
 
+    # Check if basic phrases entered
     if topic == "Basic Phrases":
         print("\nDictionary  - Basic Phrases")
+
         # For loop prints formatted dictionary
         for basic in basic_phrases:
             print(basic)
+
 
 def profile():
     print("Profile")
