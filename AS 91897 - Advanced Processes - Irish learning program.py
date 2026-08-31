@@ -9,7 +9,7 @@ import random
 print("Haigh Gaeilge\n"
       "Irish learning program\n")
 
-print("""\n\nTopics available:
+print("""\nTopics available:
   Basic Phrases""")
       
 
@@ -25,6 +25,7 @@ def learn(basic_phrases):
         if topic == "Basic Phrases":
             dictionary = basic_phrases
 
+
             # Welcome User
             print("\nLearn Basic Phrases")
 
@@ -39,7 +40,7 @@ def learn(basic_phrases):
         # Get user answer selection
         user_selection = input("Enter number selection: ")
 
-            # Check if selection correct
+        # Check if selection correct
         if user_selection == "2":
             print("""Correct! 
             Congratulations on learning a new word!""")
@@ -81,7 +82,7 @@ def learn(basic_phrases):
         # Get user answer selection
         user_selection = input("Enter number selection: ")
 
-            # Check if selection correct
+        # Check if selection correct
         if user_selection == "1":
             print("""Correct! 
             Congratulations on learning a new word!""")
@@ -102,7 +103,7 @@ def learn(basic_phrases):
         # Get user answer selection
         user_selection = input("Enter number selection: ")
 
-            # Check if selection correct
+        # Check if selection correct
         if user_selection == "3":
             print("""Correct! 
             Congratulations on learning a new word!""")
@@ -123,7 +124,7 @@ def learn(basic_phrases):
         # Get user answer selection
         user_selection = input("Enter number selection: ")
 
-            # Check if selection correct
+        # Check if selection correct
         if user_selection == "1":
             print("""Correct! 
             Congratulations on learning a new word!""")
@@ -144,7 +145,7 @@ def learn(basic_phrases):
         # Get user answer selection
         user_selection = input("Enter number selection: ")
 
-            # Check if selection correct
+        # Check if selection correct
         if user_selection == "2":
             print("""Correct! 
             Congratulations on learning a new word!""")
@@ -165,7 +166,7 @@ def learn(basic_phrases):
         # Get user answer selection
         user_selection = input("Enter number selection: ")
 
-            # Check if selection correct
+        # Check if selection correct
         if user_selection == "3":
             print("""Correct! 
             Congratulations on learning a new word!""")
@@ -184,11 +185,12 @@ def dictionary(basic_phrases):
     topic = input("Enter dictionary topic: ").title()
 
     if topic == "Basic Phrases":
-        print("\nDictionary  - Basic Phrases")
+        print("\nDictionary  -  Basic Phrases")
         # For loop prints formatted dictionary
         for basic in basic_phrases:
-            print(basic)
+            print("{:13} | {:15}".format(basic['English'], basic['Irish']))
 
+            
 def profile():
     print("Profile")
 
@@ -198,13 +200,16 @@ def main():
 
     # List of dictionaries - Topic: Basic Phrases
     basic_phrases = [
-        {"Hi" : "Haigh"},
-        {"Hello" : "Dia duit"},
-        {"Bye" : "Slán"},
-        {"Please" : "Le do thoil"},
-        {"Thank you" : "Go raibh maith agat"},
-        {"Welcome" : "Fáilte"},
-        {"Good Morning" : "Maidin mhaith"},
+        {"English" : "Hi", "Irish" : "Haigh"},
+        {"English" : "Hello", "Irish" : "Dia Duit"},
+        {"English" : "Bye", "Irish" : "Slán"},
+        {"English" : "Please", "Irish" : "Le do thoil"},
+        {"English" : "Thankyou", "Irish" : "Go raibh maith agat"},
+        {"English" : "Welcome", "Irish" : "Fáilte"},
+        {"English" : "Good Morning", "Irish" : "Maidin mhaith"}
+        ]
+
+    filler_words = [
         {"With" : "le"},
         {"And" : "agus"},
         {"Or" : "no"},
