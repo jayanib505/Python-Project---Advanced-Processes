@@ -23,7 +23,6 @@ def learn(basic_phrases):
 
         # If Basic Phrases chosen set as dictionary
         if topic == "Basic Phrases":
-            dictionary = basic_phrases
 
 
             # Welcome User
@@ -37,144 +36,165 @@ def learn(basic_phrases):
             print("2. Hi")
             print("3. Bye")
 
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
 
-        # Check if selection correct
-        if user_selection == "2":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
+            # Check if selection correct
+            if user_selection == "2":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
 
-        else:
-            print("Incorrect. Keep going!")
+            elif user_selection == "0":
+                break
 
-
-
-        # Select Irish translation 
-        print("\nSelect the correct translation for: Dia duit")
-
-        # English translation options
-        print("1. Bye")
-        print("2. Please")
-        print("3. Hello")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-
-        # Check if selection correct
-        if user_selection == "3":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
-
-        else:
-            print("Incorrect. Keep going!")
+            else:
+                print("Incorrect. Keep going!")
 
 
 
-         # Select Irish translation 
-        print("\nSelect the correct translation for: Slán")
+            # Select Irish translation 
+            print("\nSelect the correct translation for: Dia duit")
+    
+            # English translation options
+            print("1. Bye")
+            print("2. Please")
+            print("3. Hello")
 
-        # English translation options
-        print("1. Bye")
-        print("2. Thank you")
-        print("3. Please")
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
 
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
+            # Check if selection correct
+            if user_selection == "3":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
 
-        # Check if selection correct
-        if user_selection == "1":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
+            elif user_selection == "0":
+                break
 
-        else:
-            print("Incorrect. Keep going!")
-
-
-
-        # Select Irish translation 
-        print("\nSelect the correct translation for: Le do thoil")
-
-        # English translation options
-        print("1. Hi")
-        print("2. Welcome")
-        print("3. Please")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-
-        # Check if selection correct
-        if user_selection == "3":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
-
-        else:
-            print("Incorrect. Keep going!")
+            else:
+                print("Incorrect. Keep going!")
 
 
 
-        # Select Irish translation 
-        print("\nSelect the correct translation for: Go raibh maith agat")
+             # Select Irish translation 
+            print("\nSelect the correct translation for: Slán")
 
-        # English translation options
-        print("1. Thank you")
-        print("2. Welcome")
-        print("3. Bye")
+            # English translation options
+            print("1. Bye")
+            print("2. Thank you")
+            print("3. Please")
 
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
 
-        # Check if selection correct
-        if user_selection == "1":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
+            # Check if selection correct
+            if user_selection == "1":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
 
-        else:
-            print("Incorrect. Keep going!")
-
-
-
-        # Select Irish translation 
-        print("\nSelect the correct translation for: Maidin mhaith")
-
-        # English translation options
-        print("1. Hello")
-        print("2. Good Morning")
-        print("3. Welcome")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-
-        # Check if selection correct
-        if user_selection == "2":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
-
-        else:
-            print("Incorrect. Keep going!")
+            elif user_selection == "0":
+                break
+        
+            else:
+                print("Incorrect. Keep going!")
 
 
 
-        # Select Irish translation 
-        print("\nSelect the correct translation for: Fáilte")
+            # Select Irish translation 
+            print("\nSelect the correct translation for: Le do thoil")
 
-        # English translation options
-        print("1. Bye")
-        print("2. Please")
-        print("3. Welcome")
+            # English translation options
+            print("1. Hi")
+            print("2. Welcome")
+            print("3. Please")
 
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
 
-        # Check if selection correct
-        if user_selection == "3":
-            print("""Correct! 
-            Congratulations on learning a new word!""")
+            # Check if selection correct
+            if user_selection == "3":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
 
-        else:
-            print("Incorrect. Keep going!")
+            elif user_selection == "0":
+                break
+
+            else:
+                print("Incorrect. Keep going!")
 
 
+
+            # Select Irish translation 
+            print("\nSelect the correct translation for: Go raibh maith agat")
+
+            # English translation options
+            print("1. Thank you")
+            print("2. Welcome")
+            print("3. Bye")
+
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
+
+            # Check if selection correct
+            if user_selection == "1":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
+
+            elif topic == "0":
+                break
+
+            else:
+                print("Incorrect. Keep going!")
+
+
+
+            # Select Irish translation 
+            print("\nSelect the correct translation for: Maidin mhaith")
+
+            # English translation options
+            print("1. Hello")
+            print("2. Good Morning")
+            print("3. Welcome")
+
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
+
+            # Check if selection correct
+            if user_selection == "2":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
+
+            elif user_selection == "0":
+                break
+
+            else:
+                print("Incorrect. Keep going!")
+
+
+
+            # Select Irish translation 
+            print("\nSelect the correct translation for: Fáilte")
+
+            # English translation options
+            print("1. Bye")
+            print("2. Please")
+            print("3. Welcome")
+
+            # Get user answer selection
+            user_selection = input("Enter number selection: ")
+
+            # Check if selection correct
+            if user_selection == "3":
+                print("""Correct! 
+                Congratulations on learning a new word!""")
+
+            elif user_selection == "0":
+                break
+
+            else:
+                print("Incorrect. Keep going!")
+        
+            
         
 
 def dictionary(basic_phrases):
