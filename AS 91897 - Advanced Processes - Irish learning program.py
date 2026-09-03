@@ -22,167 +22,161 @@ Everyday greetings\n""")
 
     topic = input("Enter topic to learn: ").title()
     while True:
+        # If Everyday greetings chosen set as vocabulary
+        if topic == "Eg":
 
-        try:
+            # Welcome User
+            print("\nLearn Everyday greetings")
 
-            # If Everyday greetings chosen set as vocabulary
-            if topic == "Eg":
+            # Select Irish translation
+            print("\nSelect the correct translation for: Haigh")
 
-                # Welcome User
-                print("\nLearn Everyday greetings")
+            # English translation options
+            print("1. Hello")
+            print("2. Hi")
+            print("3. Bye")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Haigh")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for Haigh: ")
 
-                # English translation options
-                print("1. Hello")
-                print("2. Hi")
-                print("3. Bye")
+            # Check if selection correct
+            if user_selection == 2 and english_word == "Hi":
+                 print("""Correct.
+                 Word added to vocabulary!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for Haigh: ")
+            elif user_selection == 0 or english_word == "0":
+                break
 
-                # Check if selection correct
-                if user_selection == 2 and english_word == "Hi":
-                    print("""Correct.
-                    Word added to vocabulary!""")
+            else:
+                print("Incorrect. Keep going!")
 
-                elif user_selection == 0 or english_word == "0":
-                    break
+            # Select Irish translation
+            print("\nSelect the correct translation for: Dia duit")
 
-                else:
-                    print("Incorrect. Keep going!")
+            # English translation options
+            print("1. Bye")
+            print("2. Please")
+            print("3. Hello")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Dia duit")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for Dia duit: ")   
 
-                # English translation options
-                print("1. Bye")
-                print("2. Please")
-                print("3. Hello")
+            # Check if selection correct
+            if user_selection == 3 and english_word == "Hello":
+                print("""Correct.
+                Word added to vocabulary!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for Dia duit: ")   
+            else:
+                print("Incorrect. Keep going!")
 
-                # Check if selection correct
-                if user_selection == 3 and english_word == "Hello":
-                    print("""Correct.
-                    Word added to vocabulary!""")
+            # Select Irish translation
+            print("\nSelect the correct translation for: Slán")
 
-                else:
-                    print("Incorrect. Keep going!")
+            # English translation options
+            print("1. Bye")
+            print("2. Thank you")
+            print("3. Please")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Slán")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for Slán: ")
 
-                # English translation options
-                print("1. Bye")
-                print("2. Thank you")
-                print("3. Please")
+            # Check if selection correct
+            if user_selection == 1 and english_word == "Bye":
+                print("""Correct.
+                Word added to vocabulary!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for Slán: ")
+            else:
+                print("Incorrect. Keep going!")
 
-                # Check if selection correct
-                if user_selection == 1 and english_word == "Bye":
-                    print("""Correct.
-                    Word added to vocabulary!""")
+            # Select Irish translation
+            print("\nSelect the correct translation for: Le do thoil")
 
-                else:
-                    print("Incorrect. Keep going!")
+            # English translation options
+            print("1. Hi")
+            print("2. Welcome")
+            print("3. Please")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Le do thoil")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for Le do thoil: ")
 
-                # English translation options
-                print("1. Hi")
-                print("2. Welcome")
-                print("3. Please")
+            # Check if selection correct
+            if user_selection == 3 and english_word == "Please":
+                print("""Correct.
+                Word added to vocabulary!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for Le do thoil: ")
+            else:
+                print("Incorrect. Keep going!")
 
-                # Check if selection correct
-                if user_selection == 3 and english_word == "Please":
-                    print("""Correct.
-                    Word added to vocabulary!""")
+            # Select Irish translation
+            print("\nSelect the correct translation for: Go raibh maith agat")
 
-                else:
-                    print("Incorrect. Keep going!")
+            # English translation options
+            print("1. Thank you")
+            print("2. Welcome")
+            print("3. Bye")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Go raibh maith agat")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for Go raibh maith agat: ")
 
-                # English translation options
-                print("1. Thank you")
-                print("2. Welcome")
-                print("3. Bye")
+            # Check if selection correct
+            if user_selection == 1 and english_word == "Thank you":
+                print("""Correct.
+                Word added to vocabulary!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for Go raibh maith agat: ")
+            else:
+                print("Incorrect. Keep going!")
 
-                # Check if selection correct
-                if user_selection == 1 and english_word == "Thank you":
-                    print("""Correct.
-                    Word added to vocabulary!""")
+            # Select Irish translation
+            print("\nSelect the correct translation for: Maidin mhaith")
 
-                else:
-                    print("Incorrect. Keep going!")
+            # English translation options
+            print("1. Hello")
+            print("2. Good Morning")
+            print("3. Welcome")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Maidin mhaith")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for Maidin mhaith: ")
 
-                # English translation options
-                print("1. Hello")
-                print("2. Good Morning")
-                print("3. Welcome")
+            # Check if selection correct
+            if user_selection == 2 and english_word == "Good Morning":
+                print("""Correct.
+                Word added to vocabulary!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for Maidin mhaith: ")
+            else:
+                print("Incorrect. Keep going!")
 
-                # Check if selection correct
-                if user_selection == 2 and english_word == "Good Morning":
-                    print("""Correct.
-                    Word added to vocabulary!""")
+            # Select Irish translation
+            print("\nSelect the correct translation for: Fáilte")
 
-                else:
-                    print("Incorrect. Keep going!")
+            # English translation options
+            print("1. Bye")
+            print("2. Please")
+            print("3. Welcome")
 
-                # Select Irish translation
-                print("\nSelect the correct translation for: Fáilte")
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            english_word = input("Write the translation for Fáilte: ")
 
-                # English translation options
-                print("1. Bye")
-                print("2. Please")
-                print("3. Welcome")
+            # Check if selection correct
+            if user_selection == 3 and english_word == "Welcome":
+                print("""Correct.
+                Word added to vocabulary!!""")
 
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                english_word = input("Write the translation for Fáilte: ")
+            else:
+                print("Incorrect. Keep going!")
 
-                # Check if selection correct
-                if user_selection == 3 and english_word == "Welcome":
-                    print("""Correct.
-                    Word added to vocabulary!!""")
-
-                else:
-                    print("Incorrect. Keep going!")
-
-        # Catches inputs that aren't integers
-        except ValueError:
-            print("Please enter a number.")
 
 
 def vocabulary(everyday_greetings):
@@ -237,16 +231,16 @@ def main():
         # Ask for option choice
         decision = int(input("\nEnter number option: "))
 
-        if decision == "1":
+        if decision == 1:
             learn(everyday_greetings)
 
-        elif decision == "2":
+        elif decision == 2:
             vocabulary(everyday_greetings)
 
-        elif decision == "3":
+        elif decision == 3:
             profile()
 
-        elif decision == "0":
+        elif decision == 0:
             print("Session over.")
             break
 
