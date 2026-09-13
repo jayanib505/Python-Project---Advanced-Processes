@@ -4,30 +4,22 @@
 # 30/07/2026
 
 
+# Welcome user
+print("\nDia duit Kenish8")
 
-def learn(everyday_greetings, topics):
+
+print("""\nTopics:
+  Everyday greetings (Eg)""")
+
+
+def learn(topic, everyday_greetings, points):
     """Ask multiple choice questions for selected topic"""
-    print("\nWelcome to Learn")
-    
-    
-    while True:
-        print(topics)
-        topic = input("Enter topic to learn: ").title()
-        
-        # If Everyday greetings chosen set as vocabulary
-        if topic == "Eg":
-            # Welcome User
-            print("\nLearn Everyday greetings")
 
-        elif topic == "0":
-            break  
+    # If Everyday greetings chosen set as vocabulary
+    if topic == "Eg":
 
-        else:
-
-            print("Enter acronym(e.g. Everyday greetings = Eg)")
-            continue
-
-                
+        # Welcome User
+        print("\nLearn Everyday greetings")
 
         # Select Irish translation
         print("\nSelect the correct translation for: Haigh")
@@ -38,17 +30,15 @@ def learn(everyday_greetings, topics):
         print("3. Bye")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
+        user_selection = input("Enter number selection: ")
         # User write translation in English
-        english_word = input("Write the translation for Haigh: ")
+        english_word = input("Write the translation for Haigh: ").strip().lower()
 
         # Check if selection correct
-        if user_selection == 2 and english_word == "Hi":
-            print("""Correct.
-            Word added to vocabulary!""")
-
-        elif user_selection == 0 or english_word == "0":
-            break
+        if user_selection == "2" and english_word == "hi":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
 
         else:
             print("Incorrect. Keep going!")
@@ -62,14 +52,15 @@ def learn(everyday_greetings, topics):
         print("3. Hello")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
+        user_selection = input("Enter number selection: ")
         # User write translation in English
-        english_word = input("Write the translation for Dia duit: ")   
+        english_word = input("Write the translation for Dia duit: ").strip().lower()   
 
         # Check if selection correct
-        if user_selection == 3 and english_word == "Hello":
-            print("""Correct.
-            Word added to vocabulary!""")
+        if user_selection == "3" and english_word == "hello":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
 
         else:
             print("Incorrect. Keep going!")
@@ -83,14 +74,15 @@ def learn(everyday_greetings, topics):
         print("3. Please")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
+        user_selection = input("Enter number selection: ")
         # User write translation in English
-        english_word = input("Write the translation for Slán: ")
+        english_word = input("Write the translation for Slán: ").strip().lower()
 
         # Check if selection correct
-        if user_selection == 1 and english_word == "Bye":
-            print("""Correct.
-            Word added to vocabulary!""")
+        if user_selection == "1" and english_word == "bye":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
 
         else:
             print("Incorrect. Keep going!")
@@ -104,14 +96,16 @@ def learn(everyday_greetings, topics):
         print("3. Please")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
+        user_selection = input("Enter number selection: ")
         # User write translation in English
-        english_word = input("Write the translation for Le do thoil: ")
+        english_word = input("Write the translation for Le do thoil: ").strip().lower()
 
         # Check if selection correct
-        if user_selection == 3 and english_word == "Please":
-            print("""Correct.
-            Word added to vocabulary!""")
+        if user_selection == "3" and english_word == "please":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
+
 
         else:
             print("Incorrect. Keep going!")
@@ -120,19 +114,21 @@ def learn(everyday_greetings, topics):
         print("\nSelect the correct translation for: Go raibh maith agat")
 
         # English translation options
-        print("1. Thank you")
+        print("1. Thankyou")
         print("2. Welcome")
         print("3. Bye")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
+        user_selection = input("Enter number selection: ")
         # User write translation in English
-        english_word = input("Write the translation for Go raibh maith agat: ")
+        english_word = input("Write the translation for Go raibh maith agat: ").strip().lower()
 
         # Check if selection correct
-        if user_selection == 1 and english_word == "Thank you":
-            print("""Correct.
-            Word added to vocabulary!""")
+        if user_selection == "1" and english_word == "thankyou":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
+
 
         else:
             print("Incorrect. Keep going!")
@@ -146,14 +142,17 @@ def learn(everyday_greetings, topics):
         print("3. Welcome")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
+        user_selection = input("Enter number selection: ")
         # User write translation in English
-        english_word = input("Write the translation for Maidin mhaith: ")
+        english_word = input("Write the translation for Maidin mhaith: ").strip().lower()
+        print(english_word)
 
         # Check if selection correct
-        if user_selection == 2 and english_word == "Good Morning":
-            print("""Correct.
-            Word added to vocabulary!""")
+        if user_selection == "2" and english_word == "good morning":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
+
 
         else:
             print("Incorrect. Keep going!")
@@ -167,25 +166,31 @@ def learn(everyday_greetings, topics):
         print("3. Welcome")
 
         # Get user answer selection
-        user_selection = int(input("Enter number selection: "))
-        english_word = input("Write the translation for Fáilte: ")
+        user_selection = input("Enter number selection: ")
+        english_word = input("Write the translation for Fáilte: ").strip().lower()
 
         # Check if selection correct
-        if user_selection == 3 and english_word == "Welcome":
-            print("""Correct.
-            Word added to vocabulary!!""")
+        if user_selection == "3" and english_word == "welcome":
+            print("""Correct!
+            Congratulations on learning a new word!""")
+            points += 10
+
 
         else:
             print("Incorrect. Keep going!")
-           
+        
+    return points
 
 
 def vocabulary(everyday_greetings):
     """Print vocabulary for chosen topic"""
     print("\nWelcome to the Vocabulary")
 
+    print("""\nTopics:
+  Everyday greetings (Eg)""")
+
     # Ask user for topic
-    topic = input("Enter vocab topic: ").title()
+    topic = input("Enter vocab topic: ").strip().title()
 
     if topic == "Eg":
         print("\nVocab  -  Everyday greetings")
@@ -194,9 +199,12 @@ def vocabulary(everyday_greetings):
             print("{:13} | {:15}".format(basic['English'], basic['Irish']))
 
 
-def profile():
+def profile(points):
     """Display user learning stats"""
-    print("Profile")
+    print("\nWelcome to Profile")
+    print("Username: Kenish8")
+    print("Rank: ")
+    print("Points: {}".format(points))
 
 
 def main():
@@ -219,15 +227,10 @@ def main():
         {"The" :"an"}
         ]
 
-    topics = "\nTopics:\nEveryday greetings |(Eg)"
-
+    points = 0
+    
     # Loop
     while True:
-
-        # Welcome user
-        print("\nDia duit Kenish8\n")
-        print(topics)
-
         # Menu
         print("\n")
         print("\n---Dashboard---")
@@ -237,18 +240,25 @@ def main():
         print("0. Exit")
 
         # Ask for option choice
-        decision = int(input("\nEnter number option: "))
+        decision = input("\nEnter number option: ")
 
-        if decision == 1:
-            learn(everyday_greetings, topics)
+        if decision == "1":
+            print("\nWelcome to Learn")
+            
+            print("""\nTopics:
+        Everyday greetings (Eg)\n""")
+            
+            topic = input("Enter topic to learn: ").strip().title()
+            if topic == "Eg":
+                points = learn(topic, everyday_greetings, points)
 
-        elif decision == 2:
+        elif decision == "2":
             vocabulary(everyday_greetings)
 
-        elif decision == 3:
-            profile()
+        elif decision == "3":
+            profile(points)
 
-        elif decision == 0:
+        elif decision == "0":
             print("Session over.")
             break
 
