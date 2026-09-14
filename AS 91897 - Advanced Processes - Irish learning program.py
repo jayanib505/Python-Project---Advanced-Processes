@@ -9,7 +9,8 @@ print("\nDia duit Kenish8")
 
 
 print("""\nTopics:
-  Everyday greetings (Eg)""")
+  Everyday greetings (Eg)
+  Filler Words (Fw)""")
 
 
 def learn(topic, everyday_greetings, points):
@@ -182,12 +183,13 @@ def learn(topic, everyday_greetings, points):
     return points
 
 
-def vocabulary(everyday_greetings):
+def vocabulary(everyday_greetings, filler_words):
     """Print vocabulary for chosen topic"""
     print("\nWelcome to the Vocabulary")
 
     print("""\nTopics:
-  Everyday greetings (Eg)""")
+  Everyday greetings (Eg)
+  Filler Words (Fw) """)
 
     # Ask user for topic
     topic = input("Enter vocab topic: ").strip().title()
@@ -197,6 +199,13 @@ def vocabulary(everyday_greetings):
         # For loop prints formatted vocabulary
         for basic in everyday_greetings:
             print("{:13} | {:15}".format(basic['English'], basic['Irish']))
+
+    elif topic == "Fw":
+        print("\nVocab  -  Filler Words")
+        # For loop prints formatted vocabulary
+        for filler in filler_words:
+            print("{:5} | {:15}".format(filler['English'], filler['Irish']))
+
 
 
 def profile(points):
@@ -221,10 +230,10 @@ def main():
         ]
 
     filler_words = [
-        {"With" :"le"},
-        {"And" :"agus"},
-        {"Or" :"no"},
-        {"The" :"an"}
+        {"English" : "With", "Irish" : "le"},
+        {"English" :"And", "Irish" : "agus"},
+        {"English" : "Or", "Irish" : "no"},
+        {"English" : "The", "Irish" : "an"}
         ]
 
     points = 0
@@ -246,14 +255,15 @@ def main():
             print("\nWelcome to Learn")
             
             print("""\nTopics:
-        Everyday greetings (Eg)\n""")
+        Everyday greetings (Eg)\n
+        Filler Words (Fw)\n""")
             
             topic = input("Enter topic to learn: ").strip().title()
             if topic == "Eg":
                 points = learn(topic, everyday_greetings, points)
 
         elif decision == "2":
-            vocabulary(everyday_greetings)
+            vocabulary(everyday_greetings, filler_words)
 
         elif decision == "3":
             profile(points)
