@@ -1,3 +1,4 @@
+
 ##
 # AS 91897 - Advanced Processes
 # Jayani Bhula
@@ -16,10 +17,24 @@ print("""\nTopics:
 def learn(topic, everyday_greetings, points):
     """Ask multiple choice questions for selected topic"""
 
+    eg_questions = [
+        {"Word" : "Haigh", "Answer" : "hi", "Options" : ["hello", "bye"]},
+        {"Word" : "Dia duit", "Answer" : "hello", "Options" : ["bye", "please"]},
+        {"Word" : "Slán", "Answer" : "bye", "Options" : ["thankyou", "please"]},
+        {"Word" : "Le do thoil", "Answer" : "please", "Options" : ["welcome", "hi"]},
+        {"Word" : "Go raibh maith agat", "Answer" : "thank you", "Options" : ["welcome", "bye"]},
+        {"Word" : "Maidin mhaith", "Answer" : "good morning", "Options" : ["hello", "welcome"]},
+        {"Word" : "Fáilte", "Answer" : "welcome", "Options" : ["bye", "please"]},
+        ]
+
+    for questions in eg_questions:
+        print("Select the correct translation for: {} \n Options: \n1.{} \n2.{} \n3.{}"
+              .format(eg_questions['Word'], eg_questions['Options'], eg_questions['Options']))
+    
     # If Everyday greetings chosen set as vocabulary
     if topic == "Eg":
-
-        # Welcome User
+ 
+       # Welcome User
         print("\nLearn Everyday greetings")
 
         # Select Irish translation
@@ -176,7 +191,6 @@ def learn(topic, everyday_greetings, points):
             Congratulations on learning a new word!""")
             points += 10
 
-
         else:
             print("Incorrect. Keep going!")
         
@@ -205,7 +219,6 @@ def vocabulary(everyday_greetings, filler_words):
         # For loop prints formatted vocabulary
         for filler in filler_words:
             print("{:5} | {:15}".format(filler['English'], filler['Irish']))
-
 
 
 def profile(points):
@@ -237,7 +250,7 @@ def main():
         ]
 
     points = 0
-    
+
     # Loop
     while True:
         # Menu
@@ -257,11 +270,11 @@ def main():
             print("""\nTopics:
         Everyday greetings (Eg)\n
         Filler Words (Fw)\n""")
-            
+
             topic = input("Enter topic to learn: ").strip().title()
             if topic == "Eg":
                 points = learn(topic, everyday_greetings, points)
-
+   
         elif decision == "2":
             vocabulary(everyday_greetings, filler_words)
 
