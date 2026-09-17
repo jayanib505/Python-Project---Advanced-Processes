@@ -13,7 +13,7 @@ print("""\nTopics:
   Filler Words (fw)""")
 
 
-def learn(topic, points, eg_questions):
+def learn(topic, points, eg_questions, fw_questions):
     """Ask multiple choice questions for selected topic"""
     
     # If Everyday greetings chosen set as vocabulary
@@ -178,7 +178,10 @@ def main():
 
             topic = input("Enter topic to learn: ").strip().lower()
             if topic == "eg":
-                points = learn(topic, points, eg_questions)
+                points = learn(topic, points, eg_questions, fw_questions)
+
+            elif topic == "fw":
+                points = learn(topic, points, eg_questions, fw_questions)
    
         elif decision == "2":
             vocabulary(everyday_greetings, filler_words)
