@@ -10,192 +10,37 @@ print("\nDia duit Kenish8")
 
 
 print("""\nTopics:
-  Everyday greetings (Eg)
-  Filler Words (Fw)""")
+  Everyday greetings (eg)
+  Filler Words (fw)""")
 
 
-def learn(topic, everyday_greetings, points):
+def learn(topic, points, eg_questions):
     """Ask multiple choice questions for selected topic"""
 
-    eg_questions = [
-        {"Word" : "Haigh", "Answer" : "hi", "Options" : ["hello", "bye"]},
-        {"Word" : "Dia duit", "Answer" : "hello", "Options" : ["bye", "please"]},
-        {"Word" : "Slán", "Answer" : "bye", "Options" : ["thankyou", "please"]},
-        {"Word" : "Le do thoil", "Answer" : "please", "Options" : ["welcome", "hi"]},
-        {"Word" : "Go raibh maith agat", "Answer" : "thank you", "Options" : ["welcome", "bye"]},
-        {"Word" : "Maidin mhaith", "Answer" : "good morning", "Options" : ["hello", "welcome"]},
-        {"Word" : "Fáilte", "Answer" : "welcome", "Options" : ["bye", "please"]},
-        ]
-
-    for questions in eg_questions:
-        print("Select the correct translation for: {} \n Options: \n1.{} \n2.{} \n3.{}"
-              .format(eg_questions['Word'], eg_questions['Options'], eg_questions['Options']))
-    
     # If Everyday greetings chosen set as vocabulary
-    if topic == "Eg":
- 
-       # Welcome User
-        print("\nLearn Everyday greetings")
+    if topic == "eg":
+            # Welcome User
+            print("\nLearn Everyday greetings")
 
-        # Select Irish translation
-        print("\nSelect the correct translation for: Haigh")
+            for questions in eg_questions:
+                print("\nSelect the correct translation for: {} \n \nOptions: \n1.{} \n2.{} \n3.{}"
+                .format(questions['Word'], questions['Answer'].title(), questions['Options'][0], questions['Options'][1]))
+    
+                # Get user answer selection
+                user_selection = int(input("Enter number selection: "))
+                # User write translation in English
+                english_word = input("Write the translation for {}: ".format['Word']).strip().lower()
 
-        # English translation options
-        print("1. Hello")
-        print("2. Hi")
-        print("3. Bye")
+                if user_selection == 1 and english_word == questions['Answer']:
+                    print("Correct!")
+                    points += 10
+                else:
+                    print("Incorrect. The answer was: {}".format(questions['Answer']))
 
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        # User write translation in English
-        english_word = input("Write the translation for Haigh: ").strip().lower()
-
-        # Check if selection correct
-        if user_selection == "2" and english_word == "hi":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-        else:
-            print("Incorrect. Keep going!")
-
-        # Select Irish translation
-        print("\nSelect the correct translation for: Dia duit")
-
-        # English translation options
-        print("1. Bye")
-        print("2. Please")
-        print("3. Hello")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        # User write translation in English
-        english_word = input("Write the translation for Dia duit: ").strip().lower()   
-
-        # Check if selection correct
-        if user_selection == "3" and english_word == "hello":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-        else:
-            print("Incorrect. Keep going!")
-
-        # Select Irish translation
-        print("\nSelect the correct translation for: Slán")
-
-        # English translation options
-        print("1. Bye")
-        print("2. Thank you")
-        print("3. Please")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        # User write translation in English
-        english_word = input("Write the translation for Slán: ").strip().lower()
-
-        # Check if selection correct
-        if user_selection == "1" and english_word == "bye":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-        else:
-            print("Incorrect. Keep going!")
-
-        # Select Irish translation
-        print("\nSelect the correct translation for: Le do thoil")
-
-        # English translation options
-        print("1. Hi")
-        print("2. Welcome")
-        print("3. Please")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        # User write translation in English
-        english_word = input("Write the translation for Le do thoil: ").strip().lower()
-
-        # Check if selection correct
-        if user_selection == "3" and english_word == "please":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-
-        else:
-            print("Incorrect. Keep going!")
-
-        # Select Irish translation
-        print("\nSelect the correct translation for: Go raibh maith agat")
-
-        # English translation options
-        print("1. Thankyou")
-        print("2. Welcome")
-        print("3. Bye")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        # User write translation in English
-        english_word = input("Write the translation for Go raibh maith agat: ").strip().lower()
-
-        # Check if selection correct
-        if user_selection == "1" and english_word == "thankyou":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-
-        else:
-            print("Incorrect. Keep going!")
-
-        # Select Irish translation
-        print("\nSelect the correct translation for: Maidin mhaith")
-
-        # English translation options
-        print("1. Hello")
-        print("2. Good Morning")
-        print("3. Welcome")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        # User write translation in English
-        english_word = input("Write the translation for Maidin mhaith: ").strip().lower()
-        print(english_word)
-
-        # Check if selection correct
-        if user_selection == "2" and english_word == "good morning":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-
-        else:
-            print("Incorrect. Keep going!")
-
-        # Select Irish translation
-        print("\nSelect the correct translation for: Fáilte")
-
-        # English translation options
-        print("1. Bye")
-        print("2. Please")
-        print("3. Welcome")
-
-        # Get user answer selection
-        user_selection = input("Enter number selection: ")
-        english_word = input("Write the translation for Fáilte: ").strip().lower()
-
-        # Check if selection correct
-        if user_selection == "3" and english_word == "welcome":
-            print("""Correct!
-            Congratulations on learning a new word!""")
-            points += 10
-
-        else:
-            print("Incorrect. Keep going!")
-        
     return points
 
+
+        
 
 def vocabulary(everyday_greetings, filler_words):
     """Print vocabulary for chosen topic"""
@@ -232,6 +77,17 @@ def profile(points):
 def main():
     """Menu and holds word lists"""
     # List of dictionaries - Topic: Everyday greetings
+
+    eg_questions = [
+            {"Word" : "Haigh", "Answer" : "hi", "Options" : ["Hello", "Bye"]},
+            {"Word" : "Dia duit", "Answer" : "hello", "Options" : ["Bye", "Please"]},
+            {"Word" : "Slán", "Answer" : "bye", "Options" : ["Thankyou", "Please"]},
+            {"Word" : "Le do thoil", "Answer" : "please", "Options" : ["Welcome", "Hi"]},
+            {"Word" : "Go raibh maith agat", "Answer" : "thankyou", "Options" : ["Welcome", "Bye"]},
+            {"Word" : "Maidin mhaith", "Answer" : "good morning", "Options" : ["Hello", "Welcome"]},
+            {"Word" : "Fáilte", "Answer" : "welcome", "Options" : ["Bye", "Please"]},
+            ]
+    
     everyday_greetings = [
         {"English" : "Hi", "Irish" : "Haigh"},
         {"English" : "Hello", "Irish" : "Dia Duit"},
@@ -268,12 +124,12 @@ def main():
             print("\nWelcome to Learn")
             
             print("""\nTopics:
-        Everyday greetings (Eg)\n
-        Filler Words (Fw)\n""")
+        Everyday greetings (eg)\n
+        Filler Words (fw)\n""")
 
-            topic = input("Enter topic to learn: ").strip().title()
-            if topic == "Eg":
-                points = learn(topic, everyday_greetings, points)
+            topic = input("Enter topic to learn: ").strip().lower()
+            if topic == "eg":
+                points = learn(topic, points, eg_questions)
    
         elif decision == "2":
             vocabulary(everyday_greetings, filler_words)
