@@ -15,31 +15,56 @@ print("""\nTopics:
 
 def learn(topic, points, eg_questions):
     """Ask multiple choice questions for selected topic"""
-
+    
     # If Everyday greetings chosen set as vocabulary
     if topic == "eg":
-            # Welcome User
-            print("\nLearn Everyday greetings")
+        # Welcome User
+        print("\nLearn Everyday greetings")
+
+        # For Loop that runs through eg_questions
+        for questions in eg_questions:
+            print("\nSelect the correct translation for: {} \n \nOptions: \n1.{} \n2.{} \n3.{}"
+            .format(questions['Word'], questions['Answer'].title(), questions['Options'][0], questions['Options'][1]))
+    
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for {}: ".format(questions['Word'])).strip().lower()
+
+            if user_selection == 1 and english_word == questions['Answer']:
+                print("""Correct!
+                Congratulations on learning a new word!""")
+                points += 2
+                
+            else: 
+                print("Incorrect. The answer was: {}".format(questions['Answer'].title()))
+
+        return points    
+
+
+    elif topic == "fw":
+        # Welcome User
+        print("\nLearn Filler Words")
 
             # For Loop that runs through eg_questions
-            for questions in eg_questions:
-                print("\nSelect the correct translation for: {} \n \nOptions: \n1.{} \n2.{} \n3.{}"
-                .format(questions['Word'], questions['Answer'].title(), questions['Options'][0], questions['Options'][1]))
+        for questions in fw_questions:
+            print("\nSelect the correct translation for: {} \n \nOptions: \n1.{} \n2.{} \n3.{}"
+            .format(questions['Word'], questions['Answer'].title(), questions['Options'][0], questions['Options'][1]))
     
-                # Get user answer selection
-                user_selection = int(input("Enter number selection: "))
-                # User write translation in English
-                english_word = input("Write the translation for {}: ".format(questions['Word'])).strip().lower()
+            # Get user answer selection
+            user_selection = int(input("Enter number selection: "))
+            # User write translation in English
+            english_word = input("Write the translation for {}: ".format(questions['Word'])).strip().lower()
 
-                if user_selection == 1 and english_word == questions['Answer']:
-                    print("""Correct!
-                           Congratulations on learning a new word!""")
-                    points += 10
-                else: 
-                   print("Incorrect. The answer was: {}".format(questions['Answer'].title()))
+            if user_selection == 1 and english_word == questions['Answer']:
+                print("""Correct!
+                Congratulations on learning a new word!""")
+                points += 2
 
-    return points
+            else: 
+                print("Incorrect. The answer was: {}".format(questions['Answer'].title()))
 
+        return points
 
 
 def vocabulary(everyday_greetings, filler_words):
@@ -47,19 +72,19 @@ def vocabulary(everyday_greetings, filler_words):
     print("\nWelcome to the Vocabulary")
 
     print("""\nTopics:
-  Everyday greetings (Eg)
-  Filler Words (Fw) """)
+  Everyday greetings (eg)
+  Filler Words (fw) """)
 
     # Ask user for topic
-    topic = input("Enter vocab topic: ").strip().title()
+    topic = input("Enter vocab topic: ").strip().lower()
 
-    if topic == "Eg":
+    if topic == "eg":
         print("\nVocab  -  Everyday greetings")
         # For loop prints formatted vocabulary
         for basic in everyday_greetings:
             print("{:13} | {:15}".format(basic['English'], basic['Irish']))
 
-    elif topic == "Fw":
+    elif topic == "fw":
         print("\nVocab  -  Filler Words")
         # For loop prints formatted vocabulary
         for filler in filler_words:
@@ -72,19 +97,19 @@ def profile(points):
     print("Username: Kenish8")
 
     # Determine rank
-    if points <10:
+    if points < 10:
         print("Rank: Rookie")
 
-    elif points >10 and =<30:
-        print("Rank: Sophmore")
+    elif 10 <= points <= 30:
+        print("Rank: Sophomore")
 
-    elif points >30 and <40:
+    elif 30 < points <= 40:
         print("Rank: Pro")
 
-    elif points >40 and <50:
+    elif 40 < points <= 50:
         print("Rank: Veteran")
 
-    elif point <50:
+    else:
         print("Rank: Legend")
   
     print("Points: {}".format(points))
@@ -103,7 +128,15 @@ def main():
             {"Word" : "Maidin mhaith", "Answer" : "good morning", "Options" : ["Hello", "Welcome"]},
             {"Word" : "Fáilte", "Answer" : "welcome", "Options" : ["Bye", "Please"]},
             ]
-    
+
+    fw_questions = [
+        {"Word" : "Le", "Answer" : "with", "Options" : ["And", "Or"]},
+        {"Word" : "Agus", "Answer" : "and", "Options" : ["With", "The"]},
+        {"Word" : "No", "Answer" : "or", "Options" : ["The", "And"]},
+        {"Word" : "An", "Answer" : "the", "Options" : ["With", "Or"]}
+        ]
+
+            
     everyday_greetings = [
         {"English" : "Hi", "Irish" : "Haigh"},
         {"English" : "Hello", "Irish" : "Dia Duit"},
