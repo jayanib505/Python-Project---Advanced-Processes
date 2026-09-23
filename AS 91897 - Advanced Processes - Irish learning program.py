@@ -15,7 +15,7 @@ print("""\nTopics:
 
 def learn(topic, points, eg_questions, fw_questions):
     """Ask multiple choice questions for selected topic"""
-    
+
     # If Everyday greetings chosen set as vocabulary
     if topic == "eg":
         # Welcome User
@@ -25,9 +25,17 @@ def learn(topic, points, eg_questions, fw_questions):
         for questions in eg_questions:
             print("\nSelect the correct translation for: {} \n \nOptions: \n1.{} \n2.{} \n3.{}"
             .format(questions['Word'], questions['Answer'].title(), questions['Options'][0], questions['Options'][1]))
-    
-            # Get user answer selection
-            user_selection = int(input("Enter number selection: "))
+
+            while True:
+                try:
+                    # Get user answer selection
+                    user_selection = int(input("Enter number selection: "))
+                    break
+
+                except ValueError:
+                    print("Enter a NUMBER (e.g 2) not letters ")
+
+
             # User write translation in English
             english_word = input("Write the translation for {}: ".format(questions['Word'])).strip().lower()
 
@@ -39,20 +47,26 @@ def learn(topic, points, eg_questions, fw_questions):
             else: 
                 print("Incorrect. The answer was: {}".format(questions['Answer'].title()))
 
-        return points    
-
 
     elif topic == "fw":
         # Welcome User
         print("\nLearn Filler Words")
 
-            # For Loop that runs through eg_questions
+        # For Loop that runs through eg_questions
         for questions in fw_questions:
             print("\nSelect the correct translation for: {} \n \nOptions: \n1.{} \n2.{} \n3.{}"
             .format(questions['Word'], questions['Answer'].title(), questions['Options'][0], questions['Options'][1]))
-    
-            # Get user answer selection
-            user_selection = int(input("Enter number selection: "))
+
+            while True:
+                try:
+                    # Get user answer selection
+                    user_selection = int(input("Enter number selection: "))
+                    break
+
+                except ValueError:
+                    print("Enter a NUMBER (e.g 2) not letters ")
+
+
             # User write translation in English
             english_word = input("Write the translation for {}: ".format(questions['Word'])).strip().lower()
 
@@ -64,6 +78,7 @@ def learn(topic, points, eg_questions, fw_questions):
             else: 
                 print("Incorrect. The answer was: {}".format(questions['Answer'].title()))
 
+        
         return points
 
 
