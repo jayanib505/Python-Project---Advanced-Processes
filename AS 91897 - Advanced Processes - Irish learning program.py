@@ -77,9 +77,8 @@ def learn(topic, points, eg_questions, fw_questions):
 
             else: 
                 print("Incorrect. The answer was: {}".format(questions['Answer'].title()))
-
         
-        return points
+    return points
 
 
 def vocabulary(everyday_greetings, filler_words):
@@ -91,7 +90,7 @@ def vocabulary(everyday_greetings, filler_words):
   Filler Words (fw) """)
 
     # Ask user for topic
-    topic = input("Enter vocab topic: ").strip().lower()
+    topic = input("\nEnter vocab topic: ").strip().lower()
 
     if topic == "eg":
         print("\nVocab  -  Everyday greetings")
@@ -186,12 +185,12 @@ def main():
 
         if decision == "1":
             print("\nWelcome to Learn")
-            
-            print("""\nTopics:
-        Everyday greetings (eg)\n
-        Filler Words (fw)\n""")
 
-            topic = input("Enter topic to learn: ").strip().lower()
+            print("""\nTopics:
+  Everyday greetings (eg)
+  Filler Words (fw) """)
+
+            topic = input("\nEnter topic to learn: ").strip().lower()
             if topic == "eg":
                 points = learn(topic, points, eg_questions, fw_questions)
 
