@@ -3,6 +3,8 @@
 # Jayani Bhula
 # 30/07/2026
 
+import random
+
 # Irish Learning Python Program
 """This program helps you learn Irish.
 
@@ -27,6 +29,10 @@ print("""\nTopics:
 
 def learn(topic, points, eg_questions, fw_questions, errors):
     """Ask multiple choice questions for selected topic."""
+    # Variable that tracks lesson points and errors
+    lesson_points = 0
+    lesson_errors = 0
+
     # If Everyday greetings chosen set as vocabulary
     if topic == "eg":
         # Welcome User
@@ -58,12 +64,12 @@ def learn(topic, points, eg_questions, fw_questions, errors):
             if user_selection == 1 and english_word == questions['Answer']:
                 print("""Correct!
                 Word added to vocabulary!""")
-                points += 2     # Add 2 points
+                lesson_points += 2     # Add 2 points
 
             else:
                 print("Incorrect. The answer was: {}"
                       .format(questions['Answer'].title()))
-                errors += 1      # Add 1 error
+                lesson_errors += 1      # Add 1 error
 
     elif topic == "fw":
         # Welcome User
@@ -80,7 +86,11 @@ def learn(topic, points, eg_questions, fw_questions, errors):
                 try:
                     # Get user answer selection
                     user_selection = int(input("Enter number selection: "))
-                    break
+                    # Check user input between range 1 and 3
+                    if 1 <= user_selection <= 3:
+                        break
+                    # Instruct user to enter within range
+                    print("Please enter 1, 2, or 3.")
 
                 except ValueError:
                     # Tell user the input error
@@ -94,17 +104,25 @@ def learn(topic, points, eg_questions, fw_questions, errors):
             if user_selection == 1 and english_word == questions['Answer']:
                 print("""Correct!
                 Word added to vocabulary!""")
-                points += 2     # Add 2 points
+                lesson_points += 2     # Add 2 points
 
             else:
                 print("Incorrect. The answer was: {}"
                       .format(questions['Answer'].title()))
-                errors += 1      # Add 1 error
-    
-    print("\nYou have earned {} points!".format(points))
-    print("{} errors were made.".format(errors))
+                lesson_errors += 1      # Add 1 error
 
-    return points, errors
+    # Print Lesson stats
+    print("\n---Lesson Stats---")
+    print("You have earned {} points!".format(lesson_points))
+
+    # Prints error outcome with correct grammar
+    if lesson_errors == 1:
+        print("{} error was made.".format(lesson_errors))
+    else:
+        print("{} errors were made.".format(lesson_errors))
+
+    # Return values back with lesson points and errors added
+    return points + lesson_points, errors + lesson_errors
 
 
 def vocabulary(everyday_greetings, filler_words):
@@ -251,9 +269,14 @@ def main():
                 points, errors = learn(topic, points, eg_questions, fw_questions, errors)
 
         elif decision == "0":
+            remember_word = random.choice(everyday_greetings, filler_words)
+            print("Task: Remember {} for next time!".format(remember_word))
             # Message indicating program ending
             print("Session over.")
             break   # Exits loop
+
+        else:
+            print("Invalid input.")
 
 
 if __name__ == "__main__":
