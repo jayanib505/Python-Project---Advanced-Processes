@@ -25,7 +25,7 @@ print("""\nTopics:
   Filler Words (fw)""")
 
 
-def learn(topic, points, eg_questions, fw_questions):
+def learn(topic, points, eg_questions, fw_questions, errors):
     """Ask multiple choice questions for selected topic."""
     # If Everyday greetings chosen set as vocabulary
     if topic == "eg":
@@ -34,8 +34,8 @@ def learn(topic, points, eg_questions, fw_questions):
 
         # For Loop that runs through eg_questions
         for questions in eg_questions:
-            print("""\nSelect the correct translation for:
-                  {} \n \nOptions: \n1.{} \n2.{} \n3.{}"""
+            print("""\nSelect the correct translation for: {}
+            \nOptions: \n1.{} \n2.{} \n3.{}"""
                   .format(questions['Word'], questions['Answer'].title(),
                           questions['Options'][0], questions['Options'][1]))
 
@@ -63,6 +63,7 @@ def learn(topic, points, eg_questions, fw_questions):
             else:
                 print("Incorrect. The answer was: {}"
                       .format(questions['Answer'].title()))
+                errors += 1      # Add 1 error
 
     elif topic == "fw":
         # Welcome User
@@ -70,8 +71,8 @@ def learn(topic, points, eg_questions, fw_questions):
 
         # For Loop that runs through eg_questions
         for questions in fw_questions:
-            print("""\nSelect the correct translation for:
-                  {} \n \nOptions: \n1.{} \n2.{} \n3.{}"""
+            print("""\nSelect the correct translation for: {}
+            \nOptions: \n1.{} \n2.{} \n3.{}"""
                   .format(questions['Word'], questions['Answer'].title(),
                           questions['Options'][0], questions['Options'][1]))
 
@@ -98,8 +99,12 @@ def learn(topic, points, eg_questions, fw_questions):
             else:
                 print("Incorrect. The answer was: {}"
                       .format(questions['Answer'].title()))
+                errors += 1      # Add 1 error
+    
+    print("\nYou have earned {} points!".format(points))
+    print("{} errors were made.".format(errors))
 
-    return points
+    return points, errors
 
 
 def vocabulary(everyday_greetings, filler_words):
@@ -127,16 +132,16 @@ def vocabulary(everyday_greetings, filler_words):
             print("{:5} | {:15}".format(filler['English'], filler['Irish']))
 
 
-def profile(points):
+def profile(points, errors):
     """Display user learning stats."""
     print("\nWelcome to Profile")
     print("Username: Kenish8")
 
     # Determine rank based off points
-    if points < 10:
+    if points <= 10:
         print("Rank: Rookie")
 
-    elif 10 <= points <= 30:
+    elif 11 <= points <= 30:
         print("Rank: Sophomore")
 
     elif 30 < points <= 40:
@@ -150,6 +155,8 @@ def profile(points):
 
     # Print current points
     print("Points: {}".format(points))
+    #Print errors
+    print("Errors: {}".format(errors))
 
 
 def main():
@@ -201,43 +208,47 @@ def main():
     # Points variable
     points = 0
 
+    # Errors variable
+    errors = 0
+
     # Loop
     while True:
         # Menu
         print("\n")
         print("\n---Dashboard---")
-        print("1. Learn")
+        print("1. Profile")
         print("2. Vocabulary")
-        print("3. Profile")
+        print("3. Learn")
         print("0. Exit")
 
         # Ask for option choice
         decision = input("\nEnter number option: ")
 
         if decision == "1":
-            print("\nWelcome to Learn")
-
-            print("""\nTopics:
-  Everyday greetings (eg)
-  Filler Words (fw) """)
-
-            # Ask user for topic input
-            topic = input("\nEnter topic to learn: ").strip().lower()
-            if topic == "eg":
-                # Stores returned points
-                points = learn(topic, points, eg_questions, fw_questions)
-
-            elif topic == "fw":
-                # Stores returned points
-                points = learn(topic, points, eg_questions, fw_questions)
+            # User profile function
+            profile(points, errors)
 
         elif decision == "2":
             # Vocabulary function
             vocabulary(everyday_greetings, filler_words)
 
         elif decision == "3":
-            # User profile function
-            profile(points)
+            print("\nWelcome to Learn")
+            
+            print("""\nTopics:
+    Everyday greetings (eg)
+    Filler Words (fw) """)
+            
+            # Ask user for topic input
+            topic = input("\nEnter topic to learn: ").strip().lower()
+
+            if topic == "eg":
+                # Stores returned points
+                points, errors = learn(topic, points, eg_questions, fw_questions, errors)
+            
+            elif topic == "fw":
+                # Stores returned points
+                points, errors = learn(topic, points, eg_questions, fw_questions, errors)
 
         elif decision == "0":
             # Message indicating program ending
