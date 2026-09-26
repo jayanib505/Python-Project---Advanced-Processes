@@ -56,7 +56,7 @@ def learn(topic, points, eg_questions, fw_questions, errors):
                         break
                     # Instruct user to enter within range
                     print("Please enter 1, 2, or 3.")
-                    
+
                 except ValueError:
                     # Tell user the input error
                     print("Enter a NUMBER (e.g 2) not letters ")
@@ -170,10 +170,10 @@ def profile(points, errors):
     elif 11 <= points <= 30:
         print("Rank: Sophomore")
 
-    elif 30 < points <= 40:
+    elif 31 <= points <= 40:
         print("Rank: Pro")
 
-    elif 40 < points <= 50:
+    elif 41 <= points <= 50:
         print("Rank: Veteran")
 
     else:
