@@ -3,8 +3,6 @@
 # Jayani Bhula
 # 30/07/2026
 
-import random
-
 # Irish Learning Python Program
 """This program helps you learn Irish.
 
@@ -17,6 +15,7 @@ It lets the user:
     see your rank
     quit program.
 """
+import random
 
 # Welcome user
 print("\nDia duit Kenish8")
@@ -181,7 +180,7 @@ def profile(points, errors):
 
     # Print current points
     print("Points: {}".format(points))
-    #Print errors
+    # Print errors
     print("Errors: {}".format(errors))
 
 
@@ -260,30 +259,35 @@ def main():
 
         elif decision == "3":
             print("\nWelcome to Learn")
-            
+    
             print("""\nTopics:
     Everyday greetings (eg)
     Filler Words (fw) """)
-            
+      
             # Ask user for topic input
             topic = input("\nEnter topic to learn: ").strip().lower()
 
             if topic == "eg":
                 # Stores returned points
-                points, errors = learn(topic, points, eg_questions, fw_questions, errors)
-            
+                points, errors = learn(topic, points,
+                                       eg_questions, fw_questions, errors)
+                
             elif topic == "fw":
                 # Stores returned points
-                points, errors = learn(topic, points, eg_questions, fw_questions, errors)
+                points, errors = learn(topic, points, 
+                                       eg_questions, fw_questions, errors)
 
         elif decision == "0":
-            print("\n\nFantastic job today, see you tomorrow to continue learning Irish!")
-            print("\nTotal points: {}".format(points))  # Prints user total points
+            print("""\n\nFantastic job today,
+            see you tomorrow to continue learning Irish!""")
+            print("\nTotal points: {}"
+                  .format(points))  # Prints user total points
 
             # Random choice selects a word from either dictionary
             remember_word = random.choice(everyday_greetings + filler_words)
             # Prints out chosen word in formatted statement
-            print("Task: Remember | {} ({}) for next time!".format(remember_word['Irish'].title(), remember_word['English']))
+            print("Task: Remember | {} ({}) for next time!"
+                  .format(remember_word['Irish'].title(), remember_word['English']))
 
             # Goodbye to user
             print("\nSlán go fóill! (Goodbye for now!)")
