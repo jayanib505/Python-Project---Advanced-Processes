@@ -57,7 +57,7 @@ def learn(topic, points, eg_questions, fw_questions):
             # Check if answer is correct
             if user_selection == 1 and english_word == questions['Answer']:
                 print("""Correct!
-                Congratulations on learning a new word!""")
+                Word added to vocabulary!""")
                 points += 2     # Add 2 points
 
             else:
@@ -92,7 +92,7 @@ def learn(topic, points, eg_questions, fw_questions):
             # Check if answer is correct
             if user_selection == 1 and english_word == questions['Answer']:
                 print("""Correct!
-                Congratulations on learning a new word!""")
+                Word added to vocabulary!""")
                 points += 2     # Add 2 points
 
             else:
