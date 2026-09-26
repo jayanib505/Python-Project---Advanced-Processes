@@ -40,6 +40,7 @@ def learn(topic, points, eg_questions, fw_questions, errors):
 
         # For Loop that runs through eg_questions
         for questions in eg_questions:
+            # Prints out in multiple choice format
             print("""\nSelect the correct translation for: {}
             \nOptions: \n1.{} \n2.{} \n3.{}"""
                   .format(questions['Word'], questions['Answer'].title(),
@@ -50,8 +51,12 @@ def learn(topic, points, eg_questions, fw_questions, errors):
                 try:
                     # Get user answer selection
                     user_selection = int(input("Enter number selection: "))
-                    break
-
+                    # Check user input between range 1 and 3
+                    if 1 <= user_selection <= 3:
+                        break
+                    # Instruct user to enter within range
+                    print("Please enter 1, 2, or 3.")
+                    
                 except ValueError:
                     # Tell user the input error
                     print("Enter a NUMBER (e.g 2) not letters ")
@@ -67,6 +72,7 @@ def learn(topic, points, eg_questions, fw_questions, errors):
                 lesson_points += 2     # Add 2 points
 
             else:
+                # Shows user correct answer if they got question incorrect
                 print("Incorrect. The answer was: {}"
                       .format(questions['Answer'].title()))
                 lesson_errors += 1      # Add 1 error
@@ -77,6 +83,7 @@ def learn(topic, points, eg_questions, fw_questions, errors):
 
         # For Loop that runs through eg_questions
         for questions in fw_questions:
+            # Prints out in multiple choice format
             print("""\nSelect the correct translation for: {}
             \nOptions: \n1.{} \n2.{} \n3.{}"""
                   .format(questions['Word'], questions['Answer'].title(),
@@ -107,6 +114,7 @@ def learn(topic, points, eg_questions, fw_questions, errors):
                 lesson_points += 2     # Add 2 points
 
             else:
+                # Shows user correct answer if they got question incorrect
                 print("Incorrect. The answer was: {}"
                       .format(questions['Answer'].title()))
                 lesson_errors += 1      # Add 1 error
@@ -269,8 +277,17 @@ def main():
                 points, errors = learn(topic, points, eg_questions, fw_questions, errors)
 
         elif decision == "0":
-            remember_word = random.choice(everyday_greetings, filler_words)
-            print("Task: Remember {} for next time!".format(remember_word))
+            print("\n\nFantastic job today, see you tomorrow to continue learning Irish!")
+            print("\nTotal points: {}".format(points))  # Prints user total points
+
+            # Random choice selects a word from either dictionary
+            remember_word = random.choice(everyday_greetings + filler_words)
+            # Prints out chosen word in formatted statement
+            print("Task: Remember | {} ({}) for next time!".format(remember_word['Irish'].title(), remember_word['English']))
+
+            # Goodbye to user
+            print("\nSlán go fóill! (Goodbye for now!)")
+
             # Message indicating program ending
             print("Session over.")
             break   # Exits loop
