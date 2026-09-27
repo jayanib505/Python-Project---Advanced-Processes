@@ -203,6 +203,7 @@ def main():
             {"Word": "Fáilte", "Answer": "welcome",
              "Options": ["Bye", "Please"]},
             ]
+
     # List of ditionaries containing word, answer and options
     fw_questions = [
         {"Word": "Le", "Answer": "with", "Options": ["And", "Or"]},
@@ -259,11 +260,11 @@ def main():
 
         elif decision == "3":
             print("\nWelcome to Learn")
-    
+
             print("""\nTopics:
     Everyday greetings (eg)
     Filler Words (fw) """)
-      
+
             # Ask user for topic input
             topic = input("\nEnter topic to learn: ").strip().lower()
 
@@ -271,12 +272,11 @@ def main():
                 # Stores returned points
                 points, errors = learn(topic, points,
                                        eg_questions, fw_questions, errors)
-                
+
             elif topic == "fw":
                 # Stores returned points
-                points, errors = learn(topic, points, 
+                points, errors = learn(topic, points,
                                        eg_questions, fw_questions, errors)
-
         elif decision == "0":
             print("""\n\nFantastic job today,
             see you tomorrow to continue learning Irish!""")
@@ -287,7 +287,8 @@ def main():
             remember_word = random.choice(everyday_greetings + filler_words)
             # Prints out chosen word in formatted statement
             print("Task: Remember | {} ({}) for next time!"
-                  .format(remember_word['Irish'].title(), remember_word['English']))
+                  .format(remember_word['Irish'].title(),
+                          remember_word['English']))
 
             # Goodbye to user
             print("\nSlán go fóill! (Goodbye for now!)")
@@ -303,4 +304,3 @@ def main():
 if __name__ == "__main__":
 
     main()
-
