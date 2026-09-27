@@ -19,12 +19,12 @@ How to run the program (Step-by-step)
 - Exit program (Session total points and word challenge)
 
 ## Help
-Make sure to enter numbers when picking menu selections or quiz choices.   
-When entering written translations, check your spelling against the vocabulary lists.  
+- Make sure to enter numbers when picking menu selections or quiz choices.   
+- When entering written translations, check your spelling against the vocabulary lists.  
 
 ## Authors
 Jayani Bhula   
 
 ## Acknowledgments
-CodeWOF PEP 8 Python Style Checker
-Gemini (Google AI) — Assistance with formatting and structuring the README documentation.
+- CodeWOF PEP 8 Python Style Checker
+- Gemini (Google AI) — Assistance with formatting and structuring the README documentation.
